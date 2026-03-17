@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #3b82f6;
+  --bg: #ffffff;
+  --fg: #000000;
+  --border: #e5e7eb;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Sharp boxy components */
+  .boxy-card {
+    @apply bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6;
+  }
+
+  .boxy-button {
+    @apply bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] px-4 py-2 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all;
+  }
+
+  .boxy-button-primary {
+    @apply bg-accent text-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] px-4 py-2 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all;
+  }
+
+  .boxy-input {
+    @apply bg-white border-2 border-black px-4 py-2 focus:outline-none focus:ring-1 focus:ring-accent w-full;
+  }
+
+  .boxy-table {
+    @apply w-full border-collapse border-2 border-black;
+  }
+
+  .boxy-table th, .boxy-table td {
+    @apply border-2 border-black px-4 py-2 text-left;
+  }
+
+  .boxy-table th {
+    @apply bg-gray-50 font-bold;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-black rounded-none;
+}
